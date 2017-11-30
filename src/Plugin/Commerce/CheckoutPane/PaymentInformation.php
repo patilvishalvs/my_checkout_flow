@@ -48,7 +48,7 @@ class PaymentInformation extends PaymentInformationBase {
 
     // Get the address form element.
     $address_form = &$billing_form['address']['widget']['0']['address'];
-
+    
     // Add element validation callback to autofill the address.
     $billing_form['#element_validate'] = array_merge(
       [[$this, 'profileSelectValidate']],
@@ -71,15 +71,8 @@ class PaymentInformation extends PaymentInformationBase {
    */
   public function profileSelectValidate(array &$element, FormStateInterface $form_state) {
     // Set dummy address.
-    $address = [
-      'given_name' => 'A',
-      'family_name' => 'A',
-      'address_line1' => 'Dummy street',
-      'postal_code' => '1234 AB',
-      'locality' => 'Dummy city',
-      'country_code' => 'NL',
-    ];
-    $form_state->setValue($element['address']['widget'][0]['address']['#parents'], $address);
+    $billing_profile = $this->order->getBillingProfile()->get('address')->getValue();
+    $form_state->setValue($element['address']['widget'][0]['address']['#parents'], $billing_profile[0]);
   }
 
 }
