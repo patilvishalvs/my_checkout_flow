@@ -1,0 +1,5 @@
+name: My checkout flow
+type: module
+description: My checkout flow
+core: 8.x
+package: Custom

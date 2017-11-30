@@ -1,0 +1,14 @@
+{
+  "name": "drupal/my_checkout_flow",
+  "type": "drupal-module",
+  "description": "My checkout flow",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/my_checkout_flow",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/my_checkout_flow",
+    "source": "http://cgit.drupalcode.org/my_checkout_flow"
+  },
+  "require": { }
+}
